@@ -64,7 +64,22 @@ namespace AddressBook
                     }
                     Display();
                 }
+                
             }
+        }
+        public void DeleteContact(string name)
+        {
+            
+            Contacts deleteContact = new Contacts();
+            foreach (var contact in address)
+            {
+                if (contact.FirstName.Equals(name) || contact.LastName.Equals(name))
+                {
+                    deleteContact = contact;
+                }
+                
+            }
+
         }
         public void Display()
         {
