@@ -31,6 +31,41 @@ namespace AddressBook
             address.Add(contacts);
             Display();
         }
+        public void EditContact(string name)
+        {
+            foreach(var contact in address)
+            {
+                Console.WriteLine(" Please Enter Below value to Edit Contact : \n 1.Address 2.City 3.State 4.ZipCode 5.PhoneNumber 6.EmailId");
+                int option = Convert.ToInt32(Console.ReadLine());
+                if(contact.FirstName.Equals(name) || contact.LastName.Equals(name))
+                {
+                    switch (option)
+                    {
+                        case 1:
+                            contact.Address = Console.ReadLine(); 
+                            break;
+                        case 2:
+                            contact.City = Console.ReadLine();
+                            break;
+                        case 3:
+                            contact.State = Console.ReadLine();
+                            break;
+                        case 4:
+                            contact.ZipCode = Convert.ToInt64(Console.ReadLine());
+                            break;
+                        case 5:
+                            contact.PhoneNumber = Console.ReadLine();
+                            break;
+                        case 6:
+                            contact.EmailId = Console.ReadLine();
+                            break;
+                        default:
+                            break;
+                    }
+                    Display();
+                }
+            }
+        }
         public void Display()
         {
             foreach (var contacts in address) {
