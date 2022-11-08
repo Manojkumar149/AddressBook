@@ -79,6 +79,7 @@ namespace AddressBook
                 }
                 
             }
+            address.Remove(deleteContact);
 
         }
         public void Display()
